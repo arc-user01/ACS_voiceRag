@@ -14,6 +14,7 @@
           "Azure.Communication.Identity": "1.3.0",
           "Azure.Messaging.EventGrid": "4.13.0",
           "CliWrap": "3.6.1",
+          "Microsoft.Bot.Builder.Integration.AspNet.Core": "4.22.9",
           "Microsoft.CognitiveServices.Speech": "1.40.0",
           "Microsoft.DevTunnels.Connections": "1.0.7393",
           "Microsoft.DevTunnels.Contracts": "1.0.7393",
@@ -23,6 +24,17 @@
         },
         "runtime": {
           "CallAutomation_AzOpenAI_Voice.dll": {}
+        }
+      },
+      "AdaptiveCards/1.2.3": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AdaptiveCards.dll": {
+            "assemblyVersion": "1.2.0.0",
+            "fileVersion": "1.2.1909.25002"
+          }
         }
       },
       "Azure.AI.OpenAI/2.1.0-beta.2": {
@@ -97,6 +109,20 @@
           }
         }
       },
+      "Azure.Identity/1.3.0": {
+        "dependencies": {
+          "Azure.Core": "1.46.2",
+          "Microsoft.Identity.Client": "4.61.3",
+          "Microsoft.Identity.Client.Extensions.Msal": "2.16.5",
+          "System.Security.Cryptography.ProtectedData": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Identity.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.300.20.56202"
+          }
+        }
+      },
       "Azure.Messaging.EventGrid/4.13.0": {
         "dependencies": {
           "Azure.Core": "1.46.2",
@@ -122,6 +148,97 @@
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Bot.Builder/4.22.9": {
+        "dependencies": {
+          "Microsoft.Bot.Connector": "4.22.9",
+          "Microsoft.Bot.Connector.Streaming": "4.22.9",
+          "Microsoft.Bot.Streaming": "4.22.9"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Builder.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Builder.Integration.AspNet.Core/4.22.9": {
+        "dependencies": {
+          "Microsoft.Bot.Builder": "4.22.9",
+          "Microsoft.Bot.Configuration": "4.22.9",
+          "Microsoft.Bot.Connector.Streaming": "4.22.9",
+          "Microsoft.Bot.Streaming": "4.22.9",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Bot.Builder.Integration.AspNet.Core.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Configuration/4.22.9": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Configuration.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Connector/4.22.9": {
+        "dependencies": {
+          "Microsoft.Bot.Schema": "4.22.9",
+          "Microsoft.Identity.Client": "4.61.3",
+          "Microsoft.Identity.Web.Certificateless": "1.26.0",
+          "Microsoft.IdentityModel.Protocols.OpenIdConnect": "5.7.0",
+          "Microsoft.Rest.ClientRuntime": "2.3.24",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Connector.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Connector.Streaming/4.22.9": {
+        "dependencies": {
+          "Microsoft.Bot.Schema": "4.22.9",
+          "Microsoft.Bot.Streaming": "4.22.9",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Connector.Streaming.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Schema/4.22.9": {
+        "dependencies": {
+          "AdaptiveCards": "1.2.3",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Schema.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
+          }
+        }
+      },
+      "Microsoft.Bot.Streaming/4.22.9": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Bot.Streaming.dll": {
+            "assemblyVersion": "4.22.9.0",
+            "fileVersion": "4.22.9.0"
           }
         }
       },
@@ -603,11 +720,121 @@
           }
         }
       },
+      "Microsoft.Identity.Client/4.61.3": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Abstractions": "6.35.0"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.Identity.Client.dll": {
+            "assemblyVersion": "4.61.3.0",
+            "fileVersion": "4.61.3.0"
+          }
+        }
+      },
+      "Microsoft.Identity.Client.Extensions.Msal/2.16.5": {
+        "dependencies": {
+          "Microsoft.Identity.Client": "4.61.3",
+          "System.Security.Cryptography.ProtectedData": "4.5.0"
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
+            "assemblyVersion": "2.16.5.0",
+            "fileVersion": "2.16.5.0"
+          }
+        }
+      },
+      "Microsoft.Identity.Web.Certificateless/1.26.0": {
+        "dependencies": {
+          "Azure.Identity": "1.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Identity.Web.Certificateless.dll": {
+            "assemblyVersion": "1.26.0.0",
+            "fileVersion": "1.26.0.0"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Abstractions/6.35.0": {
+        "runtime": {
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
+            "assemblyVersion": "6.35.0.0",
+            "fileVersion": "6.35.0.41201"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/5.7.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.7.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Logging/5.7.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Logging.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols/5.7.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.7.0",
+          "Microsoft.IdentityModel.Tokens": "5.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.7.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Protocols": "5.7.0",
+          "Newtonsoft.Json": "13.0.3",
+          "System.IdentityModel.Tokens.Jwt": "5.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.Tokens/5.7.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Logging": "5.7.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.Tokens.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.OpenApi.dll": {
             "assemblyVersion": "1.2.3.0",
             "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "Microsoft.Rest.ClientRuntime/2.3.24": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Rest.ClientRuntime.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.3.23.0"
           }
         }
       },
@@ -728,11 +955,40 @@
           }
         }
       },
+      "System.IdentityModel.Tokens.Jwt/5.7.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "5.7.0",
+          "Microsoft.IdentityModel.Tokens": "5.7.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "5.7.0.0",
+            "fileVersion": "5.7.0.41120"
+          }
+        }
+      },
       "System.Memory.Data/6.0.1": {
         "runtime": {
           "lib/net6.0/System.Memory.Data.dll": {
             "assemblyVersion": "6.0.0.1",
             "fileVersion": "6.0.3624.51421"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/4.5.0": {
+        "runtime": {
+          "lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll": {
+            "rid": "win",
+            "assetType": "runtime",
+            "assemblyVersion": "4.0.3.0",
+            "fileVersion": "4.6.26515.6"
           }
         }
       }
@@ -743,6 +999,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AdaptiveCards/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C3lR/uspvCmWmbE9ku4xGD7M5GKjd+1VksQ5HWlu8Lmv99P4tfya3gGArDO99GqGodwK5z9IHmhfemcqk84VCA==",
+      "path": "adaptivecards/1.2.3",
+      "hashPath": "adaptivecards.1.2.3.nupkg.sha512"
     },
     "Azure.AI.OpenAI/2.1.0-beta.2": {
       "type": "package",
@@ -786,6 +1049,13 @@
       "path": "azure.core/1.46.2",
       "hashPath": "azure.core.1.46.2.nupkg.sha512"
     },
+    "Azure.Identity/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l1SYfZKOFBuUFG7C2SWHmJcrQQaiXgBdVCycx4vcZQkC6efDVt7mzZ5pfJAFEJDBUq7mjRQ0RPq9ZDGdSswqMg==",
+      "path": "azure.identity/1.3.0",
+      "hashPath": "azure.identity.1.3.0.nupkg.sha512"
+    },
     "Azure.Messaging.EventGrid/4.13.0": {
       "type": "package",
       "serviceable": true,
@@ -806,6 +1076,55 @@
       "sha512": "sha512-3WA9q9yVqJp222P3x1wYIGDAkpjAku0TMUaaQV22g6L67AI0LdOIrVS7Ht2vJfLHGSPVuqN94vIr15qn+HEkHw==",
       "path": "microsoft.bcl.asyncinterfaces/8.0.0",
       "hashPath": "microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.Bot.Builder/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RZytWJ9GZp4ooDaceH2YYCUkamFQ6sJYvBwGzydeB9ASBGkKZFZXITqJP+sL7Bgf0a1bLQ2H6Cz2lRv+qSrkfA==",
+      "path": "microsoft.bot.builder/4.22.9",
+      "hashPath": "microsoft.bot.builder.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Builder.Integration.AspNet.Core/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mp60r3tkVSRP19nzEaXX/eF+mhqhMK3cC37oYy//ICTot+6H2p8667yYnHtDq3RTYxzs7aGB1cjwAe2Hhf2+xw==",
+      "path": "microsoft.bot.builder.integration.aspnet.core/4.22.9",
+      "hashPath": "microsoft.bot.builder.integration.aspnet.core.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Configuration/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u3ycLjaPbSh8rukteKyyOx0iJDSE4xdpAvTD+AINP07h6Ghr1oIryWJN1o+VA5DzU8AdvYmfv5cP+QFKY78e2w==",
+      "path": "microsoft.bot.configuration/4.22.9",
+      "hashPath": "microsoft.bot.configuration.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Connector/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wE5iVzTwRCRrrgLs/SpirAanBDFMicGCze3vD/+7aLinL2JqvUHNQjGEYD5hTShTIdox74+rW/1+8qtLTVMJzQ==",
+      "path": "microsoft.bot.connector/4.22.9",
+      "hashPath": "microsoft.bot.connector.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Connector.Streaming/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8eTrjwA5D/HBamXUgyf1O8UlO0IOiajt5QfUybE7DecEiLkB1MpSIcoVhBcpeD2fpd5HnInKoMrvABFKA+qtBg==",
+      "path": "microsoft.bot.connector.streaming/4.22.9",
+      "hashPath": "microsoft.bot.connector.streaming.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Schema/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1k9zXBD+CgA93AOf8NKHe6fKVoOz75eTgPovpaweFL+lbchkxdigSZqHad2HHHc3jNuiXlcRX8gQ2fGZfY3n+Q==",
+      "path": "microsoft.bot.schema/4.22.9",
+      "hashPath": "microsoft.bot.schema.4.22.9.nupkg.sha512"
+    },
+    "Microsoft.Bot.Streaming/4.22.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iKhOvPup+weafU2SZESxZNkJ8UkNvWARH/XsViZK8i7d+ty1fuk5TLscIhKsidmt9yxbCog8M8CsHmgfxy94/w==",
+      "path": "microsoft.bot.streaming/4.22.9",
+      "hashPath": "microsoft.bot.streaming.4.22.9.nupkg.sha512"
     },
     "Microsoft.CognitiveServices.Speech/1.40.0": {
       "type": "package",
@@ -863,12 +1182,82 @@
       "path": "microsoft.extensions.logging.abstractions/8.0.3",
       "hashPath": "microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512"
     },
+    "Microsoft.Identity.Client/4.61.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-naJo/Qm35Caaoxp5utcw+R8eU8ZtLz2ALh8S+gkekOYQ1oazfCQMWVT4NJ/FnHzdIJlm8dMz0oMpMGCabx5odA==",
+      "path": "microsoft.identity.client/4.61.3",
+      "hashPath": "microsoft.identity.client.4.61.3.nupkg.sha512"
+    },
+    "Microsoft.Identity.Client.Extensions.Msal/2.16.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VlGUZEpF8KP/GCfFI59sdE0WA0o9quqwM1YQY0dSp6jpGy5EOBkureaybLfpwCuYUUjQbLkN2p7neUIcQCfbzA==",
+      "path": "microsoft.identity.client.extensions.msal/2.16.5",
+      "hashPath": "microsoft.identity.client.extensions.msal.2.16.5.nupkg.sha512"
+    },
+    "Microsoft.Identity.Web.Certificateless/1.26.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Hqx/Emql3qejWRG0xgSiK9PvNoMt/CZS56cAr9yacZ/ga95H0eJHiXE6ulKvLxAID/WqHBB3lCFrFhYQrQpNtg==",
+      "path": "microsoft.identity.web.certificateless/1.26.0",
+      "hashPath": "microsoft.identity.web.certificateless.1.26.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Abstractions/6.35.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xuR8E4Rd96M41CnUSCiOJ2DBh+z+zQSmyrYHdYhD6K4fXBcQGVnRCFQ0efROUYpP+p0zC1BLKr0JRpVuujTZSg==",
+      "path": "microsoft.identitymodel.abstractions/6.35.0",
+      "hashPath": "microsoft.identitymodel.abstractions.6.35.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zWeKWLdKdA9hbxEFBMCrImfbcHGSbwXJh4Q7dE2xIqDcaG+Uect+QUTSuXLsibtGG7/CwjhZgjZx7cl3KuRoXA==",
+      "path": "microsoft.identitymodel.jsonwebtokens/5.7.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.5.7.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Logging/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ciNPEQSnOXlhLBjylS2B8QLQhmWFXBAzbKyxpswLd9NHheCKoyC1zFU46W36Oj/Bx+RpYuOWkq1FZgnu8DqH2g==",
+      "path": "microsoft.identitymodel.logging/5.7.0",
+      "hashPath": "microsoft.identitymodel.logging.5.7.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8+wzaXavPuplcPKBtcbYuKIzDulr1arKg+0Vxv/HuEhKKxvIJqz6soEbxUnhmAs9A91o122/EGg4dcGZfoux6A==",
+      "path": "microsoft.identitymodel.protocols/5.7.0",
+      "hashPath": "microsoft.identitymodel.protocols.5.7.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Protocols.OpenIdConnect/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9B/BPlVuXokKAssL1Viph1uq1oGPaE/DWIqqVW5EL+6fWAneeqDdHBeuDPdPlwgcR4B99nWon01jpQRIM54Zrg==",
+      "path": "microsoft.identitymodel.protocols.openidconnect/5.7.0",
+      "hashPath": "microsoft.identitymodel.protocols.openidconnect.5.7.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.Tokens/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hj7eUanB5f8ap9e4I+iVY0Fbm9Uh0tG1UlZq3Z+EGq9nbDUOn8ml3N5YotNQX6XD0q/Upe16tt0jkAIVIWKrWg==",
+      "path": "microsoft.identitymodel.tokens/5.7.0",
+      "hashPath": "microsoft.identitymodel.tokens.5.7.0.nupkg.sha512"
+    },
     "Microsoft.OpenApi/1.2.3": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
       "path": "microsoft.openapi/1.2.3",
       "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Microsoft.Rest.ClientRuntime/2.3.24": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hZH7XgM3eV2jFrnq7Yf0nBD4WVXQzDrer2gEY7HMNiwio2hwDsTHO6LWuueNQAfRpNp4W7mKxcXpwXUiuVIlYw==",
+      "path": "microsoft.rest.clientruntime/2.3.24",
+      "hashPath": "microsoft.rest.clientruntime.2.3.24.nupkg.sha512"
     },
     "Microsoft.VisualStudio.Validation/15.5.31": {
       "type": "package",
@@ -926,12 +1315,26 @@
       "path": "system.clientmodel/1.4.2",
       "hashPath": "system.clientmodel.1.4.2.nupkg.sha512"
     },
+    "System.IdentityModel.Tokens.Jwt/5.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9whmG+NvaZaTVW27i7CWiEMWAndDC4JpHg6FhZgYzFOQidscBmwu8qeGsTi0YL/HdqxmNzWqsni591dPgMYB0g==",
+      "path": "system.identitymodel.tokens.jwt/5.7.0",
+      "hashPath": "system.identitymodel.tokens.jwt.5.7.0.nupkg.sha512"
+    },
     "System.Memory.Data/6.0.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yliDgLh9S9Mcy5hBIdZmX6yphYIW3NH+3HN1kV1m7V1e0s7LNTw/tHNjJP4U9nSMEgl3w1TzYv/KA1Tg9NYy6w==",
       "path": "system.memory.data/6.0.1",
       "hashPath": "system.memory.data.6.0.1.nupkg.sha512"
+    },
+    "System.Security.Cryptography.ProtectedData/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wLBKzFnDCxP12VL9ANydSYhk59fC4cvOr9ypYQLPnAj48NQIhqnjdD2yhP8yEKyBJEjERWS9DisKL7rX5eU25Q==",
+      "path": "system.security.cryptography.protecteddata/4.5.0",
+      "hashPath": "system.security.cryptography.protecteddata.4.5.0.nupkg.sha512"
     }
   }
 }

@@ -1,0 +1,15 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\StreamingData.cs(24,51): warning CS8602: Dereference of a possibly null reference. [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\StreamingData.cs(26,42): warning CS8602: Dereference of a possibly null reference. [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\AdapterWithErrorHandler.cs(20,31): error CS1061: 'ITurnContext' does not contain a definition for 'TraceActivityAsync' and no accessible extension method 'TraceActivityAsync' accepting a first argument of type 'ITurnContext' could be found (are you missing a using directive or an assembly reference?) [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+
+Build FAILED.
+
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\StreamingData.cs(24,51): warning CS8602: Dereference of a possibly null reference. [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\StreamingData.cs(26,42): warning CS8602: Dereference of a possibly null reference. [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+C:\AI-projects\voiceRag\acs\VoiceRagConnector\AdapterWithErrorHandler.cs(20,31): error CS1061: 'ITurnContext' does not contain a definition for 'TraceActivityAsync' and no accessible extension method 'TraceActivityAsync' accepting a first argument of type 'ITurnContext' could be found (are you missing a using directive or an assembly reference?) [C:\AI-projects\voiceRag\acs\VoiceRagConnector\CallAutomation_AzOpenAI_Voice.csproj]
+    2 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.99

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CallAutomation_AzOpenAI_Voice")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a96bdcaf65c0b525e4cb7c9e6d414dc37c9a1f11")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ba596bbf9af4efc96d7c767570b54bd18f6e6d0")]
 [assembly: System.Reflection.AssemblyProductAttribute("CallAutomation_AzOpenAI_Voice")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CallAutomation_AzOpenAI_Voice")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

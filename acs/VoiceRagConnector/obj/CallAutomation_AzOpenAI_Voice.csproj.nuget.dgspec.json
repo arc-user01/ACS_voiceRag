@@ -68,6 +68,10 @@
               "target": "Package",
               "version": "[3.6.1, )"
             },
+            "Microsoft.Bot.Builder.Integration.AspNet.Core": {
+              "target": "Package",
+              "version": "[4.22.9, )"
+            },
             "Microsoft.CognitiveServices.Speech": {
               "target": "Package",
               "version": "[1.40.0, )"

@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
 using CallAutomationOpenAI;
+using Microsoft.Bot.Builder;
+using Microsoft.Bot.Builder.Integration.AspNet.Core;
+using Microsoft.Bot.Connector.Authentication;
 
 
 // Load .env file
@@ -57,6 +60,28 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+ 
+ // Map Bot Framework credentials from .env to configuration
+ builder.Configuration["MicrosoftAppId"] = Environment.GetEnvironmentVariable("MicrosoftAppId");
+ builder.Configuration["MicrosoftAppPassword"] = Environment.GetEnvironmentVariable("MicrosoftAppPassword");
+ builder.Configuration["MicrosoftAppTenantId"] = Environment.GetEnvironmentVariable("MicrosoftAppTenantId");
+ builder.Configuration["MicrosoftAppType"] = Environment.GetEnvironmentVariable("MicrosoftAppType") ?? "MultiTenant";
+ 
+ builder.Services.AddHttpClient().AddControllers();
+ builder.Services.AddSingleton<BotFrameworkAuthentication, ConfigurationBotFrameworkAuthentication>(sp => 
+ {
+     var config = sp.GetRequiredService<IConfiguration>();
+     
+     // Ensure Bot Framework can see the .env variables even if they aren't in appsettings.json
+     config["MicrosoftAppId"] = Environment.GetEnvironmentVariable("MicrosoftAppId");
+     config["MicrosoftAppPassword"] = Environment.GetEnvironmentVariable("MicrosoftAppPassword");
+     config["MicrosoftAppTenantId"] = Environment.GetEnvironmentVariable("MicrosoftAppTenantId");
+     config["MicrosoftAppType"] = Environment.GetEnvironmentVariable("MicrosoftAppType") ?? "MultiTenant";
+
+     return new ConfigurationBotFrameworkAuthentication(config);
+ });
+ builder.Services.AddSingleton<IBotFrameworkHttpAdapter, AdapterWithErrorHandler>();
+ builder.Services.AddTransient<IBot, TeamsBot>();
 
 //Get ACS Connection String (prioritize Environment Variable from .env)
 var acsConnectionString = Environment.GetEnvironmentVariable("ACS_CONNECTION_STRING") 
@@ -426,6 +451,16 @@ app.Use(async (context, next) =>
     {
         await next(context);
     }
+});
+
+// Bot Framework endpoint for MS Teams Chat
+app.MapPost("/api/messages", async (
+    HttpRequest request, 
+    HttpResponse response, 
+    IBotFrameworkHttpAdapter adapter, 
+    IBot bot) =>
+{
+    await adapter.ProcessAsync(request, response, bot);
 });
 
 

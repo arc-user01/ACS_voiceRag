@@ -19,6 +19,7 @@
     <PackageReference Include="Microsoft.DevTunnels.Management" Version="1.0.7393" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Microsoft.Bot.Builder.Integration.AspNet.Core" Version="4.22.9" />
   </ItemGroup>
 
 </Project>
