@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceRag ACS Test</title>
+
+    <!-- Local ACS Bundle (Production Ready) -->
+    <script>console.time("bundle_network_load");</script>
+    <script src="js/acs.bundle.js"
+        onload="console.timeEnd('bundle_network_load'); console.log('✅ ACS Bundle Script Loaded via onload');"
+        onerror="console.timeEnd('bundle_network_load'); console.error('❌ ACS Bundle Script FAILED to load (Network Error/404)'); alert('ACS SDK Bundle failed to load over the network. Check Dev Tunnel stability or developer console.');">
+        </script>
+    <script>
+        console.time("bundle_initialization_check");
+        // We wait for the browser to finish parsing the script
+        document.addEventListener('DOMContentLoaded', () => {
+            console.timeEnd("bundle_initialization_check");
+            if (typeof window.CallClient === 'undefined') {
+                console.error('❌ ACS SDK Classes NOT found in global scope. The bundle may have loaded but failed to execute or exports are missing.');
+            } else {
+                console.log('✅ Local ACS Bundle Detected & Initialized');
+                console.log('- window.CallClient:', typeof window.CallClient);
+                console.log('- window.AzureCommunicationTokenCredential:', typeof window.AzureCommunicationTokenCredential);
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #eee;
+            border-radius: 4px;
+        }
+
+        #chat-area {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #messages {
+            height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            background: #fafafa;
+        }
+
+        .message {
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            max-width: 80%;
+        }
+
+        .message.received {
+            background: #e9ecef;
+            color: #333;
+            float: left;
+            clear: both;
+        }
+
+        .message.sent {
+            background: #007bff;
+            color: white;
+            float: right;
+            clear: both;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        button:disabled {
+            background: #ccc;
+        }
+
+        /* Voice Controls */
+        #voice-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #28a745;
+            font-size: 24px;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        #voice-btn:hover {
+            background: #218838;
+        }
+
+        #voice-btn.active {
+            background: #dc3545;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .voice-status {
+            padding: 8px 12px;
+            border-radius: 4px;
+            background: #e7f3ff;
+            border: 1px solid #007bff;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .voice-status.active {
+            display: block;
+        }
+
+        .system-msg {
+            text-align: center;
+            color: #888;
+            font-size: 0.8em;
+            margin: 10px 0;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎙️ VoiceRag ACS Tester</h1>
+
+        <div id="init-area" class="controls">
+            <p>Click below to generate a user, token, and start a new chat thread.</p>
+            <button id="start-btn" onclick="initializeChat()">Start New Chat</button>
+            <span id="status" style="margin-left: 10px; color: #666;"></span>
+        </div>
+
+        <div id="chat-area">
+            <div id="thread-info" style="margin-bottom: 10px; font-size: 0.9em; color: #555;"></div>
+            <div class="voice-status" id="voice-status">🎤 Voice mode active - speak now...</div>
+            <div id="messages"></div>
+            <div class="input-group">
+                <input type="text" id="message-input" placeholder="Type a message..."
+                    onkeypress="handleKeyPress(event)">
+                <button id="send-btn" onclick="sendMessage()">Send</button>
+                <button id="voice-btn" onclick="toggleVoice()" title="Click to use voice">🎤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN SCRIPT -->
+    <script>
+        let chatClient;
+        let chatThreadClient;
+        let userId;
+        let threadId;
+        let botId;
+        let pollingInterval; // Store interval ID
+
+        // Voice-related variables
+        let callClient = null;
+        let callAgent = null;
+        let currentCall = null;
+        let isVoiceActive = false;
+
+        // ====================================
+        // VOICE FUNCTIONALITY
+        // ====================================
+
+        async function toggleVoice() {
+            if (!isVoiceActive) {
+                await startVoice();
+            } else {
+                await stopVoice();
+            }
+        }
+
+        async function startVoice() {
+            if (!callAgent || !botId) {
+                alert('Please start the chat first to initialize the calling agent.');
+                return;
+            }
+
+            try {
+                const voiceBtn = document.getElementById('voice-btn');
+                const voiceStatus = document.getElementById('voice-status');
+
+                console.log(`📞 Starting call to bot: ${botId}`);
+
+                // Place the call to the bot
+                currentCall = callAgent.startCall([{ communicationUserId: botId }], {
+                    audioOptions: {
+                        muted: false
+                    }
+                });
+
+                currentCall.on('stateChanged', () => {
+                    console.log(`🤙 Call state: ${currentCall.state}`);
+                    if (currentCall.state === 'Connected') {
+                        isVoiceActive = true;
+                        voiceBtn.classList.add('active');
+                        voiceStatus.classList.add('active');
+                        voiceStatus.innerText = '🎤 Voice call connected - speak now...';
+                    } else if (currentCall.state === 'Disconnected' || currentCall.state === 'Disconnecting') {
+                        stopVoiceLocally();
+                    }
+                });
+
+            } catch (error) {
+                console.error('❌ Failed to start voice call:', error);
+                alert('Call failed: ' + error.message);
+                stopVoiceLocally();
+            }
+        }
+
+        async function stopVoice() {
+            if (currentCall) {
+                try {
+                    console.log('🏁 Hanging up call...');
+                    await currentCall.hangUp();
+                } catch (e) {
+                    console.error('Error hanging up:', e);
+                }
+            }
+            stopVoiceLocally();
+        }
+
+        function stopVoiceLocally() {
+            const voiceBtn = document.getElementById('voice-btn');
+            const voiceStatus = document.getElementById('voice-status');
+
+            if (isVoiceActive || currentCall) {
+                console.log('🛑 Voice session stopped');
+            }
+
+            isVoiceActive = false;
+            voiceBtn.classList.remove('active');
+            voiceStatus.classList.remove('active');
+            voiceStatus.innerText = '🎤 Voice mode active - speak now...';
+            currentCall = null;
+        }
+
+        async function initializeChat() {
+            console.time("init");
+            const statusFn = status('Initializing...');
+            const startBtn = document.getElementById('start-btn');
+            startBtn.disabled = true;
+
+            try {
+                // 1. Get Token
+                console.time("getToken");
+                const tokenRes = await fetch('/api/token');
+                if (!tokenRes.ok) throw new Error('Failed to get token');
+                const tokenData = await tokenRes.json();
+                userId = tokenData.userId;
+                botId = tokenData.botId;
+                console.timeEnd("getToken");
+
+                // Initialize Call Client and Agent
+                console.log('📞 Initializing Calling Agent...');
+                try {
+                    console.time("callClient");
+                    callClient = new window.CallClient();
+                    callAgent = await callClient.createCallAgent(new window.AzureCommunicationTokenCredential(tokenData.token));
+                    console.timeEnd("callClient");
+
+                    console.time("deviceManager");
+                    const deviceManager = await callClient.getDeviceManager();
+                    console.timeEnd("deviceManager");
+
+                    console.time("permissions");
+                    await deviceManager.askDevicePermission({ audio: true });
+                    console.timeEnd("permissions");
+
+                    console.log('✅ Calling Agent & Permissions initialized');
+                } catch (ce) {
+                    console.error('❌ Failed to initialize calling agent:', ce);
+                    addSystemMessage('Warning: Voice calling agent failed to initialize: ' + ce.message);
+                }
+                console.timeEnd("init");
+
+                statusFn('Creating Thread...');
+
+                // 2. Create Thread - pass userId so the user is added as a participant
+                const threadRes = await fetch(`/api/createTestThread?userId=${userId}`);
+                if (!threadRes.ok) throw new Error('Failed to create thread');
+                const threadData = await threadRes.json();
+                threadId = threadData.threadId;  // lowercase!
+                botId = threadData.botId;        // lowercase!
+
+                document.getElementById('init-area').style.display = 'none';
+                document.getElementById('chat-area').style.display = 'block';
+                document.getElementById('thread-info').innerText = `Thread ID: ${threadId}`;
+
+                addSystemMessage("Chat started! Polling for messages...");
+
+                // Clear any existing interval before starting a new one
+                if (pollingInterval) {
+                    clearInterval(pollingInterval);
+                }
+                // Start Polling
+                pollingInterval = setInterval(pollMessages, 3000);
+
+                statusFn('Ready.');
+            } catch (err) {
+                console.error(err);
+                status('Error: ' + err.message);
+                startBtn.disabled = false;
+            }
+        }
+
+        async function pollMessages() {
+            if (!threadId) return;
+            try {
+                const res = await fetch(`/api/getThreadMessages?threadId=${threadId}`);
+                if (!res.ok) return;
+                const msgs = await res.json();
+
+                // Clear and rebuild (simple) or simpler: just clear for now since it's a demo
+                const container = document.getElementById('messages');
+                container.innerHTML = '';
+
+                // Sort by time
+                msgs.sort((a, b) => new Date(a.createdOn) - new Date(b.createdOn));
+
+                msgs.forEach(m => {
+                    const isBot = (m.senderId === botId);
+                    const cssClass = isBot ? 'received' : 'sent';
+
+                    const div = document.createElement('div');
+                    div.className = `message ${cssClass}`;
+                    div.innerText = m.content;
+                    const clearfix = document.createElement('div');
+                    clearfix.className = 'clearfix';
+                    container.appendChild(div);
+                    container.appendChild(clearfix);
+                });
+                container.scrollTop = container.scrollHeight; // Auto-scroll
+            } catch (err) {
+                console.log("Poll error", err);
+            }
+        }
+
+        async function sendMessage() {
+            const input = document.getElementById('message-input');
+            const text = input.value.trim();
+            if (!text) return;
+
+            addMessage(text, 'sent');
+            input.value = '';
+
+            try {
+                const res = await fetch(`/api/sendChatMessage?threadId=${threadId}&userId=${userId}&text=${encodeURIComponent(text)}`);
+                if (!res.ok) throw new Error('Failed to send');
+
+                addSystemMessage("Message sent. Check your terminal or proper ACS UI for response.");
+
+            } catch (err) {
+                addSystemMessage("Error sending: " + err.message);
+            }
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function addMessage(text, type) {
+            const div = document.createElement('div');
+            div.className = `message ${type}`;
+            div.innerText = text;
+            const clearfix = document.createElement('div');
+            clearfix.className = 'clearfix';
+
+            const container = document.getElementById('messages');
+            container.appendChild(div);
+            container.appendChild(clearfix);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function addSystemMessage(text) {
+            const div = document.createElement('div');
+            div.className = 'system-msg';
+            div.innerText = text;
+            document.getElementById('messages').appendChild(div);
+        }
+
+        function status(text) {
+            const el = document.getElementById('status');
+            el.innerText = text;
+            return (t) => el.innerText = t;
+        }
+    </script>
+</body>
+
+</html>

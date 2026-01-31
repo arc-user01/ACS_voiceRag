@@ -1,0 +1,937 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "CallAutomation_AzOpenAI_Voice/1.0.0": {
+        "dependencies": {
+          "Azure.AI.OpenAI": "2.1.0-beta.2",
+          "Azure.Communication.CallAutomation": "1.4.0",
+          "Azure.Communication.Chat": "1.4.0",
+          "Azure.Communication.Identity": "1.3.0",
+          "Azure.Messaging.EventGrid": "4.13.0",
+          "CliWrap": "3.6.1",
+          "Microsoft.CognitiveServices.Speech": "1.40.0",
+          "Microsoft.DevTunnels.Connections": "1.0.7393",
+          "Microsoft.DevTunnels.Contracts": "1.0.7393",
+          "Microsoft.DevTunnels.Management": "1.0.7393",
+          "Newtonsoft.Json": "13.0.3",
+          "Swashbuckle.AspNetCore": "6.5.0"
+        },
+        "runtime": {
+          "CallAutomation_AzOpenAI_Voice.dll": {}
+        }
+      },
+      "Azure.AI.OpenAI/2.1.0-beta.2": {
+        "dependencies": {
+          "Azure.Core": "1.46.2",
+          "OpenAI": "2.1.0-beta.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.AI.OpenAI.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.100.24.55401"
+          }
+        }
+      },
+      "Azure.Communication.CallAutomation/1.4.0": {
+        "dependencies": {
+          "Azure.Communication.Common": "1.4.0",
+          "Azure.Core": "1.46.2"
+        },
+        "runtime": {
+          "lib/net8.0/Azure.Communication.CallAutomation.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.400.25.30407"
+          }
+        }
+      },
+      "Azure.Communication.Chat/1.4.0": {
+        "dependencies": {
+          "Azure.Communication.Common": "1.4.0",
+          "Azure.Core": "1.46.2"
+        },
+        "runtime": {
+          "lib/net8.0/Azure.Communication.Chat.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.400.25.32403"
+          }
+        }
+      },
+      "Azure.Communication.Common/1.4.0": {
+        "dependencies": {
+          "Azure.Core": "1.46.2"
+        },
+        "runtime": {
+          "lib/net8.0/Azure.Communication.Common.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.400.25.30401"
+          }
+        }
+      },
+      "Azure.Communication.Identity/1.3.0": {
+        "dependencies": {
+          "Azure.Communication.Common": "1.4.0",
+          "Azure.Core": "1.46.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Communication.Identity.dll": {
+            "assemblyVersion": "1.3.0.0",
+            "fileVersion": "1.300.23.57803"
+          }
+        }
+      },
+      "Azure.Core/1.46.2": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "8.0.0",
+          "System.ClientModel": "1.4.2",
+          "System.Memory.Data": "6.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/Azure.Core.dll": {
+            "assemblyVersion": "1.46.2.0",
+            "fileVersion": "1.4600.225.30510"
+          }
+        }
+      },
+      "Azure.Messaging.EventGrid/4.13.0": {
+        "dependencies": {
+          "Azure.Core": "1.46.2",
+          "System.Memory.Data": "6.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Azure.Messaging.EventGrid.dll": {
+            "assemblyVersion": "4.13.0.0",
+            "fileVersion": "4.1300.23.7003"
+          }
+        }
+      },
+      "CliWrap/3.6.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/CliWrap.dll": {
+            "assemblyVersion": "3.6.1.0",
+            "fileVersion": "3.6.1.0"
+          }
+        }
+      },
+      "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.CognitiveServices.Speech/1.40.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/linux-arm/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "rid": "linux-arm",
+            "assetType": "runtime",
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/linux-arm64/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "rid": "linux-arm64",
+            "assetType": "runtime",
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/linux-x64/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "rid": "linux-x64",
+            "assetType": "runtime",
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/osx-arm64/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "rid": "osx-arm64",
+            "assetType": "runtime",
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/osx-x64/lib/netstandard2.0/Microsoft.CognitiveServices.Speech.csharp.dll": {
+            "rid": "osx-x64",
+            "assetType": "runtime",
+            "assemblyVersion": "1.40.0.28",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/android-arm/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "android-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "android-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "android-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "android-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "android-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "android-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "android-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "android-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "android-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "android-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x64/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "android-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "android-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "android-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "android-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "android-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x86/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "android-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x86/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "android-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x86/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "android-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x86/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "android-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/android-x86/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "android-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/ios-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a": {
+            "rid": "ios-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/iossimulator-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a": {
+            "rid": "iossimulator-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/iossimulator-x64/native/libMicrosoft.CognitiveServices.Speech.core.a": {
+            "rid": "iossimulator-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.extension.codec.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libpal_azure_c_shared.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libpal_azure_c_shared_openssl3.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.codec.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libpal_azure_c_shared.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libpal_azure_c_shared_openssl3.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.core.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.audio.sys.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.codec.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.ort.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.kws.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libMicrosoft.CognitiveServices.Speech.extension.lu.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libpal_azure_c_shared.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libpal_azure_c_shared_openssl3.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-arm64/native/libMicrosoft.CognitiveServices.Speech.core.a": {
+            "rid": "maccatalyst-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-x64/native/libMicrosoft.CognitiveServices.Speech.core.a": {
+            "rid": "maccatalyst-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libMicrosoft.CognitiveServices.Speech.core.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libMicrosoft.CognitiveServices.Speech.core.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.core.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.core.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.core.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.codec.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.core.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.audio.sys.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.codec.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.kws.ort.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/Microsoft.CognitiveServices.Speech.extension.lu.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "1.40.0.28"
+          }
+        }
+      },
+      "Microsoft.DevTunnels.Connections/1.0.7393": {
+        "dependencies": {
+          "Microsoft.DevTunnels.Contracts": "1.0.7393",
+          "Microsoft.DevTunnels.Management": "1.0.7393",
+          "Microsoft.DevTunnels.Ssh": "3.11.5",
+          "Microsoft.DevTunnels.Ssh.Tcp": "3.11.5",
+          "Microsoft.VisualStudio.Validation": "15.5.31"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.DevTunnels.Connections.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.7393.622"
+          }
+        }
+      },
+      "Microsoft.DevTunnels.Contracts/1.0.7393": {
+        "runtime": {
+          "lib/net6.0/Microsoft.DevTunnels.Contracts.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.7393.622"
+          }
+        }
+      },
+      "Microsoft.DevTunnels.Management/1.0.7393": {
+        "dependencies": {
+          "Microsoft.DevTunnels.Contracts": "1.0.7393",
+          "Microsoft.VisualStudio.Validation": "15.5.31"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.DevTunnels.Management.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.7393.622"
+          }
+        }
+      },
+      "Microsoft.DevTunnels.Ssh/3.11.5": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.DevTunnels.Ssh.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.5.39983"
+          }
+        }
+      },
+      "Microsoft.DevTunnels.Ssh.Tcp/3.11.5": {
+        "dependencies": {
+          "Microsoft.DevTunnels.Ssh": "3.11.5"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.DevTunnels.Ssh.Tcp.dll": {
+            "assemblyVersion": "3.11.0.0",
+            "fileVersion": "3.11.5.39983"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.3": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1325.6609"
+          }
+        }
+      },
+      "Microsoft.OpenApi/1.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.OpenApi.dll": {
+            "assemblyVersion": "1.2.3.0",
+            "fileVersion": "1.2.3.0"
+          }
+        }
+      },
+      "Microsoft.VisualStudio.Validation/15.5.31": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.VisualStudio.Validation.dll": {
+            "assemblyVersion": "15.3.0.0",
+            "fileVersion": "15.5.31.7307"
+          }
+        },
+        "resources": {
+          "lib/netstandard2.1/cs/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "cs"
+          },
+          "lib/netstandard2.1/de/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "de"
+          },
+          "lib/netstandard2.1/es/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "es"
+          },
+          "lib/netstandard2.1/fr/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "fr"
+          },
+          "lib/netstandard2.1/it/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "it"
+          },
+          "lib/netstandard2.1/ja/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "ja"
+          },
+          "lib/netstandard2.1/ko/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "ko"
+          },
+          "lib/netstandard2.1/pl/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "pl"
+          },
+          "lib/netstandard2.1/pt-BR/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "pt-BR"
+          },
+          "lib/netstandard2.1/ru/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "ru"
+          },
+          "lib/netstandard2.1/tr/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "tr"
+          },
+          "lib/netstandard2.1/zh-Hans/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "zh-Hans"
+          },
+          "lib/netstandard2.1/zh-Hant/Microsoft.VisualStudio.Validation.resources.dll": {
+            "locale": "zh-Hant"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "OpenAI/2.1.0-beta.2": {
+        "dependencies": {
+          "System.ClientModel": "1.4.2"
+        },
+        "runtime": {
+          "lib/net6.0/OpenAI.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore/6.5.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerGen": "6.5.0",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.5.0"
+        }
+      },
+      "Swashbuckle.AspNetCore.Swagger/6.5.0": {
+        "dependencies": {
+          "Microsoft.OpenApi": "1.2.3"
+        },
+        "runtime": {
+          "lib/net7.0/Swashbuckle.AspNetCore.Swagger.dll": {
+            "assemblyVersion": "6.5.0.0",
+            "fileVersion": "6.5.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
+        "dependencies": {
+          "Swashbuckle.AspNetCore.Swagger": "6.5.0"
+        },
+        "runtime": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll": {
+            "assemblyVersion": "6.5.0.0",
+            "fileVersion": "6.5.0.0"
+          }
+        }
+      },
+      "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
+        "runtime": {
+          "lib/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
+            "assemblyVersion": "6.5.0.0",
+            "fileVersion": "6.5.0.0"
+          }
+        }
+      },
+      "System.ClientModel/1.4.2": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
+          "System.Memory.Data": "6.0.1"
+        },
+        "runtime": {
+          "lib/net8.0/System.ClientModel.dll": {
+            "assemblyVersion": "1.4.2.0",
+            "fileVersion": "1.400.225.30508"
+          }
+        }
+      },
+      "System.Memory.Data/6.0.1": {
+        "runtime": {
+          "lib/net6.0/System.Memory.Data.dll": {
+            "assemblyVersion": "6.0.0.1",
+            "fileVersion": "6.0.3624.51421"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CallAutomation_AzOpenAI_Voice/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Azure.AI.OpenAI/2.1.0-beta.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9dm9MgejTpvWZHkLC9rBP01SII2bRLR55CwkKHS55Hai1pKxST7QvZ46MjIcTcmApfaV6XbHuF8mxSorqUU05w==",
+      "path": "azure.ai.openai/2.1.0-beta.2",
+      "hashPath": "azure.ai.openai.2.1.0-beta.2.nupkg.sha512"
+    },
+    "Azure.Communication.CallAutomation/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ABPUODfWxXlpiSqTJS+5o+KBPd6sFXhXKSipg9Tmi35/AqBqOPfNUJV3VeUPHWBeXKgc2hsubM6mongycUoD+A==",
+      "path": "azure.communication.callautomation/1.4.0",
+      "hashPath": "azure.communication.callautomation.1.4.0.nupkg.sha512"
+    },
+    "Azure.Communication.Chat/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CfUDWkvK3JOHyqB1ZgqvH682beoPmfpIy+Tk10gaD3JjC6L9GC95szWVdox6dC9F0Ll0LpFhVAXe7mQP2kTz1A==",
+      "path": "azure.communication.chat/1.4.0",
+      "hashPath": "azure.communication.chat.1.4.0.nupkg.sha512"
+    },
+    "Azure.Communication.Common/1.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JTMUx9LlAV2GTVc+TksJL18kbKHPxhL4IhMmbmdbBy8t+zoy9iD185vZflbPc9y/eP1bio86BMAeSL9HMUlODw==",
+      "path": "azure.communication.common/1.4.0",
+      "hashPath": "azure.communication.common.1.4.0.nupkg.sha512"
+    },
+    "Azure.Communication.Identity/1.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2QWIheksxhRKU8kpQ6TC7A/KbzxbG7iumuC8A0e9cZDBTBUyTNqu6yj4fyqEGyR39kiSlJr0YpwKZYM7qsk67A==",
+      "path": "azure.communication.identity/1.3.0",
+      "hashPath": "azure.communication.identity.1.3.0.nupkg.sha512"
+    },
+    "Azure.Core/1.46.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HFcvd1besmgBFPIZ7iSFHZOgzGfHTZNTzG8gWYdIP8ZJQySrb+vAdArcmFw7je3kFRMDbbtMoWKNVGj2vvH1sw==",
+      "path": "azure.core/1.46.2",
+      "hashPath": "azure.core.1.46.2.nupkg.sha512"
+    },
+    "Azure.Messaging.EventGrid/4.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-o8rDRw3JTgEUvsuSwpSUXrBXN0EBykP1jkIOPO87IlNzibBrP7YQsnsaP133Qdl3F1enQ0go3oy6qkvBgDm5kg==",
+      "path": "azure.messaging.eventgrid/4.13.0",
+      "hashPath": "azure.messaging.eventgrid.4.13.0.nupkg.sha512"
+    },
+    "CliWrap/3.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-vAZOcQBJpf3Lz1gyKnnhbRw6Fhw+/rsQqGJhoVfb5BEeTKbIgAPZ6LrzcJf6XV58CmC2L2t3oKNV8s4BE1HtPQ==",
+      "path": "cliwrap/3.6.1",
+      "hashPath": "cliwrap.3.6.1.nupkg.sha512"
+    },
+    "Microsoft.Bcl.AsyncInterfaces/8.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3WA9q9yVqJp222P3x1wYIGDAkpjAku0TMUaaQV22g6L67AI0LdOIrVS7Ht2vJfLHGSPVuqN94vIr15qn+HEkHw==",
+      "path": "microsoft.bcl.asyncinterfaces/8.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512"
+    },
+    "Microsoft.CognitiveServices.Speech/1.40.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-koqOwmAYRDMrWEbaKnLGoVqjq8FsI9vZpafg/K0c82sWfFG4gv+BbxCXlI4UR3eSJUnKIqwx4BUhhKItgbAMrg==",
+      "path": "microsoft.cognitiveservices.speech/1.40.0",
+      "hashPath": "microsoft.cognitiveservices.speech.1.40.0.nupkg.sha512"
+    },
+    "Microsoft.DevTunnels.Connections/1.0.7393": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DlD8tRleMqgbJazNKXGmM6v1Jg19xwLVMbN3cDmbCA5W3uR4s8BxasihSgzdNgvSflgE6lS/W2suWe+sLQUmcA==",
+      "path": "microsoft.devtunnels.connections/1.0.7393",
+      "hashPath": "microsoft.devtunnels.connections.1.0.7393.nupkg.sha512"
+    },
+    "Microsoft.DevTunnels.Contracts/1.0.7393": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pAMrRNIFfcd0c5QqjxDsTJN+wtgM8L6fClO33tjE51u/3oqE0jIYDfxGVHgVyv/VbSY5XdBazPI3VS/oKlfyVQ==",
+      "path": "microsoft.devtunnels.contracts/1.0.7393",
+      "hashPath": "microsoft.devtunnels.contracts.1.0.7393.nupkg.sha512"
+    },
+    "Microsoft.DevTunnels.Management/1.0.7393": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-twgoY5VzLg3sfHUH1uInJYDoQM+FwVd3ZLzbPPrSAL1rBzNtFIGsEc5ssoAl/B82+c8PnhKPEnS9mUiPngX+eA==",
+      "path": "microsoft.devtunnels.management/1.0.7393",
+      "hashPath": "microsoft.devtunnels.management.1.0.7393.nupkg.sha512"
+    },
+    "Microsoft.DevTunnels.Ssh/3.11.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hN0jxDZNTvjyCRab3pqVMAF0wtcGfKSl7rLiZdGJNfi0b3tt54O6Z4EWGN5d+ghs2QgGvPybmNBE+EBBXKaHcg==",
+      "path": "microsoft.devtunnels.ssh/3.11.5",
+      "hashPath": "microsoft.devtunnels.ssh.3.11.5.nupkg.sha512"
+    },
+    "Microsoft.DevTunnels.Ssh.Tcp/3.11.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hPr7FEtzQCtcs+Youj2ax15RgwC+KgUAkRfhW0e8EX6QpEd0jh0LlDgROAjT6r4GbPD7ukIA9arMku2sXW0UIQ==",
+      "path": "microsoft.devtunnels.ssh.tcp/3.11.5",
+      "hashPath": "microsoft.devtunnels.ssh.tcp.3.11.5.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3iE7UF7MQkCv1cxzCahz+Y/guQbTqieyxyaWKhrRO91itI9cOKO76OHeQDahqG4MmW5umr3CcCvGmK92lWNlbg==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.2",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dL0QGToTxggRLMYY4ZYX5AMwBb+byQBd/5dMiZE07Nv73o6I5Are3C7eQTh7K2+A4ct0PVISSr7TZANbiNb2yQ==",
+      "path": "microsoft.extensions.logging.abstractions/8.0.3",
+      "hashPath": "microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512"
+    },
+    "Microsoft.OpenApi/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nug3rO+7Kl5/SBAadzSMAVgqDlfGjJZ0GenQrLywJ84XGKO0uRqkunz5Wyl0SDwcR71bAATXvSdbdzPrYRYKGw==",
+      "path": "microsoft.openapi/1.2.3",
+      "hashPath": "microsoft.openapi.1.2.3.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Validation/15.5.31": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-AOmvJTT4CpamJ2A6J+PBrhKPfs2HXi/MJVxN/QlViewjI4XZDrt/yp3NMto+OOgB25jDnt9IIdNTkjpNBUpXmw==",
+      "path": "microsoft.visualstudio.validation/15.5.31",
+      "hashPath": "microsoft.visualstudio.validation.15.5.31.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "OpenAI/2.1.0-beta.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l+fZAS9XnCxnxGodYFPziMNF9u0ZBfOGEyOuryXnjkcPe+Z4g/ErEvGYyq559V+Q9C8J87eQ0lfq5KtwSk6ppw==",
+      "path": "openai/2.1.0-beta.2",
+      "hashPath": "openai.2.1.0-beta.2.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-FK05XokgjgwlCI6wCT+D4/abtQkL1X1/B9Oas6uIwHFmYrIO9WUD5aLC9IzMs9GnHfUXOtXZ2S43gN1mhs5+aA==",
+      "path": "swashbuckle.aspnetcore/6.5.0",
+      "hashPath": "swashbuckle.aspnetcore.6.5.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.Swagger/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-XWmCmqyFmoItXKFsQSwQbEAsjDKcxlNf1l+/Ki42hcb6LjKL8m5Db69OTvz5vLonMSRntYO1XLqz0OP+n3vKnA==",
+      "path": "swashbuckle.aspnetcore.swagger/6.5.0",
+      "hashPath": "swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerGen/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Y/qW8Qdg9OEs7V013tt+94OdPxbRdbhcEbw4NiwGvf4YBcfhL/y7qp/Mjv/cENsQ2L3NqJ2AOu94weBy/h4KvA==",
+      "path": "swashbuckle.aspnetcore.swaggergen/6.5.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512"
+    },
+    "Swashbuckle.AspNetCore.SwaggerUI/6.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OvbvxX+wL8skxTBttcBsVxdh73Fag4xwqEU2edh4JMn7Ws/xJHnY/JB1e9RoCb6XpDxUF3hD9A0Z1lEUx40Pfw==",
+      "path": "swashbuckle.aspnetcore.swaggerui/6.5.0",
+      "hashPath": "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    },
+    "System.ClientModel/1.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-goGitN7trB9hoQ01dIpxaSYcruI+lGt/xq471AUv8irFvsIX+4HCqk1pDT/4ZPTLmU6ZUuNzhCb4MJAIwG7+Uw==",
+      "path": "system.clientmodel/1.4.2",
+      "hashPath": "system.clientmodel.1.4.2.nupkg.sha512"
+    },
+    "System.Memory.Data/6.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yliDgLh9S9Mcy5hBIdZmX6yphYIW3NH+3HN1kV1m7V1e0s7LNTw/tHNjJP4U9nSMEgl3w1TzYv/KA1Tg9NYy6w==",
+      "path": "system.memory.data/6.0.1",
+      "hashPath": "system.memory.data.6.0.1.nupkg.sha512"
+    }
+  }
+}
